@@ -55,3 +55,13 @@ function calcSI(p: number, r: number, t:number){
 
 console.log("SI is", calcSI(1000, 2, 5))
 
+// default arguments or default parameters
+function fullName(fn: string, ln: string, title: string ="Mr"){
+    return title + "." + fn + " " + ln
+}
+
+//Not passing the title
+console.log(fullName("Aditya", "Prabhakara"))
+
+//With a different title
+console.log(fullName("Aditya", "Prabhakara", "Dr"));
