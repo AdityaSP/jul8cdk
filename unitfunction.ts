@@ -55,8 +55,9 @@ function calcSI(p: number, r: number, t:number){
 
 console.log("SI is", calcSI(1000, 2, 5))
 
+
 // default arguments or default parameters
-function fullName(fn: string, ln: string, title: string ="Mr"){
+function fullName(fn: string, ln: string, title: string ="Mr") :string {
     return title + "." + fn + " " + ln
 }
 
@@ -82,3 +83,39 @@ function f1(a =10, b=20){
 }
 
 console.log(f1(undefined, 10))
+
+// functions as first class citizens / first class construct
+// pass a function to another function
+
+// definition 
+// higher order function
+function calc(m: number,n: number, func){
+    return func(m, n)
+}
+
+// injecting add functionality to calc
+let sum = calc(5,6,add)
+// injecting mul functionality to calc
+let prod = calc(5,6,mul)
+// injecting div functionality to calc
+let parts = calc(5,6,div)
+let nosense = calc(5, 6, circleArea)
+let ful = calc(5, 6, fullName);
+
+console.log(sum, prod, parts, ful)
+
+function calc1(m: number, n: number, func: (x: number, y: number)=> number ) {
+  return func(m, n);
+}
+
+// injecting add functionality to calc
+let sum1 = calc1(5,6,add)
+// injecting mul functionality to calc
+let prod1 = calc1(5,6,mul)
+// injecting div functionality to calc
+let parts1 = calc1(5,6,div)
+let nosense1 = calc1(5, 6, circleArea)
+//let ful1 = calc1(5, 6, fullName);
+
+console.log(sum1, prod1, parts1)
+
