@@ -65,3 +65,20 @@ console.log(fullName("Aditya", "Prabhakara"))
 
 //With a different title
 console.log(fullName("Aditya", "Prabhakara", "Dr"));
+
+// function which calculates the area of a circle 3.14 * r * r
+// default the value the of PI to 3.14
+
+function circleArea(r: number, PI:number = 3.14){
+    return PI * r * r
+}
+
+console.log(circleArea(5));
+console.log(circleArea(5, 3.145));
+
+
+function f1(a =10, b=20){
+    return a + b
+}
+
+console.log(f1(undefined, 10))
