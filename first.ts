@@ -22,3 +22,15 @@ const PI: number = 3.14
 // PI = 3.145
 
 console.log("Age is", age, "Eligibility: ", isEligible, "PI is ", PI)
+
+// si = p * t * r /100
+const r :number = 8
+let p: number = 1000
+let t: number = 4
+let si = p * t * r /100
+console.log("SI for p", p, " for a time of ", t, "@ rate", r, "is", si)
+
+p = 3000
+t = 2
+si = p*t*r*100
+console.log("SI for p", p, " for a time of ", t, "@ rate", r, "is", si);
