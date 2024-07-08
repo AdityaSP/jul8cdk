@@ -7,7 +7,6 @@
 
 console.log("Hello World!!!")
 
-
 let age: number = 10
 // Wrong assignment
 // a = "Hello"
