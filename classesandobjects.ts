@@ -7,17 +7,33 @@ class Employee {
   age: number;
   designation: string;
   id: number | string;
-  
-  constructor(f: string, l :string, a: number, d: string, i: number|string){
-    this.fn = f
-    this.ln = l
-    this.age = a
-    this.designation = d
-    this.id = i
+  mngrId?: number | string;
+
+  constructor(
+    f: string,
+    l: string,
+    a: number,
+    d: string,
+    i: number | string,
+    mid?: number | string
+  ) {
+    this.fn = f;
+    this.ln = l;
+    this.age = a;
+    this.designation = d;
+    this.id = i;
+    if (typeof mid !== undefined)
+        this.mngrId = mid
   }
 
   getEmpFullname(title: string) {
     return title + " " + this.fn + " " + this.ln + "(" + this.designation + ")";
+  }
+  getManger(){
+    if (typeof this.mngrId !== undefined) 
+        return this.mngrId;
+    else 
+        return ""
   }
 }
 
