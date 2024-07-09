@@ -49,6 +49,12 @@ type Employee = {
   mgrId?: number | string, 
 }
 
+type Department = {
+  n: string,
+  director: Employee
+}
+
+
 let emp3: Employee = {
   id: 789,
   mgrId: "EMP456",
@@ -66,12 +72,21 @@ let emp4: Employee = {
   id: "EMP456"
 }
 
+let analytics: Department ={ n: "Analytics", director: emp3 }
+
+
 function empfullname2(e: Employee) {
   return e.fn + " " + e.ln;
 }
 
+function printDept(d: Department){
+  return "Name:" + d.n + " The director is" + empfullname2(d.director)
+}
+
+
 console.log(empfullname2(emp3));
 console.log(empfullname2(emp4));
+console.log(printDept(analytics))
 
 // distance between two points 
 function distance (x1, y1, x2, y2){
@@ -93,3 +108,8 @@ function streetmap(p1 :Point, p2: Point){
 
 distancep(p1, p2) 
 streetmap(p1, p2)
+
+// object composition
+// employee object is a composition of strings and numbers
+// department object is a composition of string and employee
+// object encapsulation - data encapsulation
