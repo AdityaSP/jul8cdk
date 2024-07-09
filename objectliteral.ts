@@ -44,17 +44,27 @@ type Employee = {
   fn: string,
   ln: string,
   age: number,
-  designation: string
+  designation: string,
+  id: number | string,
+  mgrId?: number | string, 
 }
 
 let emp3: Employee = {
+  id: 789,
+  mgrId: "EMP456",
   fn: "Bruce",
   ln: "Wills",
   age: 57,
-  designation: "AVP",
+  designation: "AVP"
 };
 
-let emp4: Employee ={fn: "Steve", ln: "Jobs", age: 70, designation: "Founder CEO" }
+let emp4: Employee = {
+  fn: "Steve", 
+  ln: "Jobs", 
+  age: 70, 
+  designation: "Founder CEO",
+  id: "EMP456"
+}
 
 function empfullname2(e: Employee) {
   return e.fn + " " + e.ln;
