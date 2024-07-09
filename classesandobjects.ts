@@ -22,52 +22,39 @@ class Employee {
     this.age = a;
     this.designation = d;
     this.id = i;
-    if (typeof mid !== undefined)
-        this.mngrId = mid
+    if (typeof mid !== undefined) this.mngrId = mid;
   }
 
   getEmpFullname(title: string) {
     return title + " " + this.fn + " " + this.ln + "(" + this.designation + ")";
   }
-  getManger(){
-    if (typeof this.mngrId !== undefined) 
-        return this.mngrId;
-    else 
-        return ""
+  getManger() {
+    if (typeof this.mngrId !== undefined) return this.mngrId;
+    else return "";
   }
 }
 
-let emp1: Employee = new Employee("Bruce", "Wills", 57, "AVP", 456)
-let emp2 = emp1
+class Department {
+  n: string;
+  director: Employee;
+  constructor(nm: string, dir: Employee) {
+    this.n = nm;
+    this.director = dir;
+  }
+  printDept() {
+    return (
+      "Name:" +
+      this.n +
+      " The director is" +
+      this.director.getEmpFullname("Dir.")
+    );
+  }
+}
+
+let emp1: Employee = new Employee("Bruce", "Wills", 57, "AVP", 456);
 let emp3: Employee = new Employee("Steve", "Jobs", 70, "Founder CEO", "EMP001");
 
-console.log(emp1.getEmpFullname("Mr."))
-console.log(emp2.getEmpFullname("Mr."));
-
-emp1.fn = "John";
-
 console.log(emp1.getEmpFullname("Mr."));
-console.log(emp2.getEmpFullname("Mr."));
 
-
-// type Employee = {
-//   fn: string;
-//   ln: string;
-//   age: number;
-//   designation: string;
-//   id: number | string;
-//   mgrId?: number | string;
-// };
-
-// type Department = {
-//   n: string;
-//   director: Employee;
-// };
-
-// function getEmpFullname(e: Employee) {
-//   return e.fn + " " + e.ln;
-// }
-
-// function printDept(d: Department) {
-//   return "Name:" + d.n + " The director is" + getEmpFullname(d.director);
-// }
+let dep = new Department("Analytics", emp3);
+console.log(dep.printDept());
