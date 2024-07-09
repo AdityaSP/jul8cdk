@@ -17,10 +17,21 @@ class Employee {
   }
 
   getEmpFullname(title: string) {
-    return title + " " + this.fn + " " + this.ln;
+    return title + " " + this.fn + " " + this.ln + "(" + this.designation + ")";
   }
 }
 
+let emp1: Employee = new Employee("Bruce", "Wills", 57, "AVP", 456)
+let emp2 = emp1
+let emp3: Employee = new Employee("Steve", "Jobs", 70, "Founder CEO", "EMP001");
+
+console.log(emp1.getEmpFullname("Mr."))
+console.log(emp2.getEmpFullname("Mr."));
+
+emp1.fn = "John";
+
+console.log(emp1.getEmpFullname("Mr."));
+console.log(emp2.getEmpFullname("Mr."));
 
 
 // type Employee = {
